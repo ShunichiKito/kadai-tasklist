@@ -8,7 +8,17 @@
     @if (count($tasks) > 0)
         <ul>
             @foreach ($tasks as $task)
-                <li>{!! link_to_route('tasks.show', $task->id, ['id' => $task->id]) !!} : {{ $task->content }}　> {{ $task->status }}</li>
+                <li>
+                {!! link_to_route('tasks.show', $task->content, ['id' => $task->id]) !!}
+                print "   "; 
+                @if ($task->status=="まだだよ") 
+                     <button class="btn btn-warning">{{ $task->status }}</button>
+                @elseif($task->status=="完了") 
+                     <button class="btn btn-success">{{ $task->status }}</button>
+                @else
+                     <button class="btn btn-info">{{ $task->status }}</button>
+                @endif
+                </li>
             @endforeach
         </ul>
     @endif
