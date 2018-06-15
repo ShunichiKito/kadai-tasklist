@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-     @if (Auth::user()->id == $task->user_id)
-
+    
 <!-- Write content for each page here -->
     
     <h1>id = {{ $task->id }} のタスク詳細ページ</h1>
@@ -16,9 +15,6 @@
         {!! Form::submit('削除') !!}
     {!! Form::close() !!}
     
-    @else
-       {!! redirect('/'); !!}
-    @endif  
    
 
 @endsection

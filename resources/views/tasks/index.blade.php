@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @if (Auth::user()->id == $task->user_id)
-
+   
 <!-- Write content for each page here -->
     <h1>タスク一覧</h1>
 
@@ -26,8 +25,6 @@
     
     {!! link_to_route('tasks.create', '新規メッセージの投稿') !!}
     
-    @else
-       {!! redirect('/'); !!}
-    @endif   
+     
 
 @endsection
