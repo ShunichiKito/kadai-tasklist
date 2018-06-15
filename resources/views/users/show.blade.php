@@ -28,10 +28,12 @@
                           {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
                       </div>
                   {!! Form::close() !!}
-            @endif
-            @if (count($tasks) > 0)
-                @include('tasks.tasks', ['tasks' => $tasks])
-            @endif
+           
+                @if (count($tasks) > 0)
+                    @include('tasks.tasks', ['tasks' => $tasks])
+                @endif
+            
+             @endif
         </div>
     </div>
 @endsection

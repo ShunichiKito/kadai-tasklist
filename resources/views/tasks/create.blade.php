@@ -1,6 +1,9 @@
+ 
+
 @extends('layouts.app')
 
 @section('content')
+    @if (Auth::user()->id == $task->user_id)
 
 <!-- Write content for each page here -->
      <h1>タスク新規作成ページ</h1>
@@ -27,6 +30,9 @@
             {!! Form::close() !!}
         </div>
     </div>
-
+    @else
+   {!! redirect('/'); !!}
+    @endif   
 
 @endsection 
+

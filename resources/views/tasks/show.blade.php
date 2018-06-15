@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+     @if (Auth::user()->id == $task->user_id)
 
 <!-- Write content for each page here -->
     
@@ -14,5 +15,10 @@
     {!! Form::model($task, ['route' => ['tasks.destroy', $task->id], 'method' => 'delete']) !!}
         {!! Form::submit('削除') !!}
     {!! Form::close() !!}
+    
+    @else
+       {!! redirect('/'); !!}
+    @endif  
+   
 
 @endsection
